@@ -31,13 +31,13 @@ int main(void)
 //파일 1의 정보를 가져오는 함수 작성
 void filestat1(void)
 {
-stat("text1",&stat1);
+	stat("text1",&stat1);
 }
 
 //파일 2의 정보를 가져오는 함수 작성
 void filestat2(void)
 {
-stat("text2",&stat2);
+	stat("text2",&stat2);
 }
 
 //파일 1의 시간 정보를 가져오는 함수 작성
@@ -58,6 +58,13 @@ void sizecmp(void)
 //두 개의 파일 블락 수를 비교하는 함수 작성
 void blockcmp(void)
 {
+	if(((int)stat1.st_blocks)>((int)stat2.st_blocks))
+		printf("text1 is bigger");
+	else if(((int)stat1.st_blocks)<((int)stat2.st_blocks))
+		printf("text2 is bigger");
+	else
+		printf("block size are equal");
+
 }
 
 //두 개의 파일 수정 날짜를 비교하는 함수 작성
