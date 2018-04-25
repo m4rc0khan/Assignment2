@@ -71,11 +71,11 @@ else
 void blockcmp(void)
 {
 	if(((int)stat1.st_blocks)>((int)stat2.st_blocks))
-		printf("text1 is bigger");
+		printf("text1 is bigger\n");
 	else if(((int)stat1.st_blocks)<((int)stat2.st_blocks))
-		printf("text2 is bigger");
+		printf("text2 is bigger\n");
 	else
-		printf("block size are equal");
+		printf("block size are equal\n");
 
 }
 
@@ -87,6 +87,21 @@ void datecmp(void)
 //두 개의 파일 수정 시간을 비교하는 함수 작성
 void timecmp(void)
 {
+time1 = localtime(&stat1.st_mtime);
+int h_temp = time1->tm_hour;
+int m_temp = time1->tm_min;
+time2 = localtime(&stat2.st_mtime);
+
+	if(h_temp > time2->tm_hour)
+		printf("text2 is early\n");
+	else if(h_temp < time2->tm_hour)
+		printf("text1 is early\n");
+	else if(m_temp < time2->tm_min)
+		printf("text1 is early\n");
+	else
+		printf("text2 is early\n");
+	
+
 }
 
 
