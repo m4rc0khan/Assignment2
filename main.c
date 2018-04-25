@@ -20,12 +20,12 @@ int main(void)
 {
 	filestat1();
 	filestat2();
-	filetime1();
-	filetime2();
+	//filetime1();
+	//filetime2();
 	sizecmp();
-	blockcmp();
-	datecmp();
-	timecmp();
+	//blockcmp();
+	//datecmp();
+	//timecmp();
 }
 
 //파일 1의 정보를 가져오는 함수 작성
@@ -53,6 +53,12 @@ void filetime2(void)
 //두 개의 파일 크기를 비교하는 함수 작성
 void sizecmp(void)
 {
+if((int)stat1.st_size>(int)stat2.st_size)
+	printf("text1 bigger than text2\n");
+else if((int)stat1.st_size<(int)stat2.st_size)
+	printf("text2 bigger than text1\n");
+else
+	printf("size is same\n");
 }
 
 //두 개의 파일 블락 수를 비교하는 함수 작성
