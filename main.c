@@ -93,7 +93,7 @@ void datecmp(void)
 	else if((time2.tm_mday) >( time2.tm_mday))
 		printf("modified date of text2 is earlier than text1.\n");
 	else
-		printf("text1 and text2 are modified in same date!\n");
+		printf("text1 and text2 are modified in same date!!\n");
 }
 
 //두 개의 파일 수정 시간을 비교하는 함수 작성
