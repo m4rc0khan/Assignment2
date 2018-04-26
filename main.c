@@ -77,7 +77,7 @@ if((int)stat1.st_blocks>(int)stat2.st_blocks)
 else if((int)stat1.st_blocks<(int)stat2.st_blocks)
 	printf("block size of text2 is bigger then text1\n");
 else
-	printf("block size is same %d %d\n",(int)stat1.st_blocks, (int)stat2.st_blocks);
+	printf("block size is same \n");
 }
 
 //두 개의 파일 수정 날짜를 비교하는 함수 작성
@@ -99,15 +99,15 @@ void datecmp(void)
 void timecmp(void)
 {
 	if(time1.tm_hour > time2.tm_hour)
-		printf("modified time of text2 is early.\n");
+		printf("0modified time of text2 is early.\n");
 	else if(time1.tm_hour < time2.tm_hour)
-		printf("modified time of text1 is early.\n");
+		printf("1modified time of text1 is early.\n");
 	else if(time1.tm_min < time2.tm_min)
-		printf("modified time of text1 is early.\n");
-	else if(time1.tm_min > time2.tm_hour)
-		printf("modified time text2 is early.\n");
+		printf("2modified time of text1 is early.\n");
+	else if(time1.tm_min > time2.tm_min)
+		printf("3modified time text2 is early.\n");
 	else
-		printf("text1 and text2 are modified at same time!\n");
+		printf("4text1 and text2 are modified at same time!\n");
 }
 
 
