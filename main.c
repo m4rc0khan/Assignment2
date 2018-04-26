@@ -96,5 +96,3 @@ void timecmp(void)
 	else
 		printf("text2 is early\n");
 }
-
-
