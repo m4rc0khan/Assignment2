@@ -5,7 +5,7 @@
 #include <time.h>
 
 struct stat stat1, stat2;
-struct tm *time1, *time2;
+struct tm time1, time2;
 
 void filestat1(void);
 void filestat2(void);
@@ -87,21 +87,14 @@ void datecmp(void)
 //두 개의 파일 수정 시간을 비교하는 함수 작성
 void timecmp(void)
 {
-time1 = localtime(&stat1.st_mtime);
-int h_temp = time1->tm_hour;
-int m_temp = time1->tm_min;
-time2 = localtime(&stat2.st_mtime);
-
-	if(h_temp > time2->tm_hour)
+	if(time1->tm_hour > time2->tm_hour)
 		printf("text2 is early\n");
-	else if(h_temp < time2->tm_hour)
+	else if(time1->tm_hour < time2->tm_hour)
 		printf("text1 is early\n");
-	else if(m_temp < time2->tm_min)
+	else if(time1->tm_min < time2->tm_min)
 		printf("text1 is early\n");
 	else
 		printf("text2 is early\n");
-	
-
 }
 
 
