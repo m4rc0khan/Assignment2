@@ -99,15 +99,15 @@ void datecmp(void)
 void timecmp(void)
 {
 	if(time1.tm_hour > time2.tm_hour)
-		printf("0modified time of text2 is early.\n");
+		printf("modified time of text2 is early.\n");
 	else if(time1.tm_hour < time2.tm_hour)
-		printf("1modified time of text1 is early.\n");
+		printf("modified time of text1 is early.\n");
 	else if(time1.tm_min < time2.tm_min)
-		printf("2modified time of text1 is early.\n");
+		printf("modified time of text1 is early.\n");
 	else if(time1.tm_min > time2.tm_min)
-		printf("3modified time text2 is early.\n");
+		printf("modified time text2 is early.\n");
 	else
-		printf("4text1 and text2 are modified at same time!\n");
+		printf("text1 and text2 are modified at same time!\n");
 }
 
 
